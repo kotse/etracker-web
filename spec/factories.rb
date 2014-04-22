@@ -9,4 +9,11 @@ FactoryGirl.define do
       role :admin
     end
   end
+
+  factory :asset do
+    asset_type "Debit"
+    description "Default"
+    amount 1000
+    user
+  end
 end

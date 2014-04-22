@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Asset do
   let(:user) { FactoryGirl.create(:user) }
   before do
-    @asset = Asset.new asset_type: "Debit", description: "Default", amount: 1000, user_id: user.id
+    @asset = FactoryGirl.create(:asset)
   end
 
   subject { @asset }
