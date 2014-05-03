@@ -3,10 +3,30 @@
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
 <% end %>
-<% @assets.each do |asset| %>
-  <p>Asset: type: <%=asset.asset_type%> amount: <%= asset.amount %>
-	  <%= link_to("Delete asset", asset_path(asset), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') %>
-  </p>
-<% end %>
+<div class="row">
+	<div class="column">
+		<table class="table">
+		<tbody>
+		<tr>
+			<td>
+				Type
+			</td>
+			<td>
+				Description
+			</td>
+			<td>
+				Amount
+			</td>
+			<td colspan=2></td>
+		</tr>
+		<% @assets.each do |asset| %>
+		<tr>
+		  <%= render asset %>
+		</tr>
+		<% end %>
+		</tbody>
+		</table>
 
-<%= link_to "Add new asset", new_asset_path %><br />
+		<%= link_to "Add new asset", new_asset_path, :class => 'button-xs' %><br />
+	</div>		
+</div>

@@ -22,7 +22,6 @@ img {
 // to make views framework-neutral
 .column {
   @extend .col-md-6;
-  @extend .text-center;
   }
 .form {
   @extend .col-md-6;

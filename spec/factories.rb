@@ -11,7 +11,7 @@ FactoryGirl.define do
   end
 
   factory :asset do
-    asset_type "Debit"
+    asset_type :debit
     description "Default"
     amount 1000
     user

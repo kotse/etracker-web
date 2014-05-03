@@ -1,2 +1,22 @@
-<h1>Asset#edit</h1>
-<p>Find me in app/views/asset/edit.html.erb</p>
+<h1>Edit asset</h1>
+
+<div class='asset-form'>
+<%= form_for(@asset) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class='form-group'>
+    <%= f.label :asset_type, class: "asset-label-select" %>
+    
+    <%= f.select(:asset_type, Asset.asset_types.keys.map {|asset_type| [asset_type,asset_type]})%>
+  </div>
+  <div class='form-group'>
+    <%= f.label :description %>
+	<%= f.text_field :description, placeholder: "Visa Credit card", class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+	<%= f.label :amount %>
+	<%= f.text_field :amount, placeholder: "123.45", class: 'form-control' %>
+  </div>
+  <%= f.submit "Commit your changes", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>

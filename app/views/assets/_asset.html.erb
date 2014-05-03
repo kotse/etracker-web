@@ -1,0 +1,15 @@
+<td>
+  <%= asset.asset_type %>
+</td>
+<td>
+  <%= asset.description %>
+</td>
+<td>
+  <%= asset.amount %>
+</td>
+<td>
+<%= link_to("Edit", edit_asset_path(asset), :class => 'button-xs') %>
+</td>
+<td>
+<%= link_to("Delete", asset_path(asset), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs' ) %>
+</td>

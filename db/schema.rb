@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419195451) do
+ActiveRecord::Schema.define(version: 20140502131943) do
 
   create_table "assets", force: true do |t|
-    t.string   "asset_type"
+    t.integer  "asset_type",  limit: 255
     t.string   "description"
     t.integer  "amount"
     t.integer  "user_id"
