@@ -16,4 +16,11 @@ FactoryGirl.define do
     amount 1000
     user
   end
+
+  factory :expense do
+    description "Default"
+    amount 100
+    asset
+    user
+  end
 end

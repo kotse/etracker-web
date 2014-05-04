@@ -9,6 +9,7 @@ describe User do
   subject { @user }
 
   it { should respond_to (:assets) }
+  it { should respond_to (:expenses) }
 
   describe "asset association" do
 
@@ -25,7 +26,29 @@ describe User do
 
   		assets.each do |asset|
   			expect(Asset.where(id: asset.id)).to be_empty
-		end
+  		end
   	end
+  end
+
+  describe "expense association" do
+    before do 
+      @user.save
+      @asset = FactoryGirl.create(:asset, user: @user)
+    end
+
+    let!(:first_expense) do
+      FactoryGirl.create(:expense, user: @user, asset: @asset)
+    end
+
+    it "should delete expenses when user is destroyed" do
+      expenses = @user.expenses.to_a
+      @user.destroy
+      # expenses is just a copy, we make the following expect to make sure to_a is not removed in some future
+      expect(expenses).not_to be_empty
+
+      expenses.each do |expense|
+        expect(Expense.where(id: expense.id)).to be_empty
+      end
+    end
   end
 end
