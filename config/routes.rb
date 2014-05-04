@@ -3,4 +3,5 @@ ETracker::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
   resources :assets
+  resources :expenses
 end
