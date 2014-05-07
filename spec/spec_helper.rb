@@ -50,7 +50,11 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
 
+    config.include Devise::TestHelpers, :type => :controller
+    config.extend ControllerMacros, :type => :controller
     config.include Capybara::DSL
+    include Warden::Test::Helpers
+    Warden.test_mode!
   end
 end
 

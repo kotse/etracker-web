@@ -1,0 +1,12 @@
+<h1>Your expenses:</h1>
+<br/>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<div class="row">
+	<div class="column">
+		<% @expenses.each do |expense| %>
+		  <%= expense.asset.description %> | <%= expense.amount %>
+		<% end %>
+	</div>		
+</div>
