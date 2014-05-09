@@ -1,12 +1,31 @@
 <h1>Your expenses:</h1>
 <br/>
-<% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
 <div class="row">
 	<div class="column">
+
+		<table class="table">
+		<tbody>
+		<tr>
+			<td>
+				Asset name
+			</td>
+			<td>
+				Description
+			</td>
+			<td>
+				Amount
+			</td>
+			<td colspan=2></td>
+		</tr>
 		<% @expenses.each do |expense| %>
-		  <%= expense.asset.description %> | <%= expense.amount %>
+		<tr>
+		  <%= render expense %>
+		</tr>
 		<% end %>
-	</div>		
+		</tbody>
+		</table>
+
+
+		<%= link_to "Add new expense", new_expense_path, :class => 'button-xs' %><br />	
+	</div>
 </div>

@@ -1,0 +1,22 @@
+<h1>Track new Expense</h1>
+
+<div class='expense-form'>
+<%= form_for(@expense) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class='form-group'>
+    <%= f.label "Asset" %>
+    
+    <%= f.select(:asset_id, current_user.assets.map {|asset| [asset.description,asset.id]})%>
+  </div>
+  <div class='form-group'>
+    <%= f.label :description %>
+	<%= f.text_field :description, placeholder: "Groceries", class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+	<%= f.label :amount %>
+	<%= f.text_field :amount, placeholder: "123.45", class: 'form-control' %>
+  </div>
+  <%= f.submit "Track", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>

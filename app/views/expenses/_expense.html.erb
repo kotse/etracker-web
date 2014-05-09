@@ -1,0 +1,15 @@
+<td>
+  <%= expense.asset.description %>
+</td>
+<td>
+  <%= expense.description %>
+</td>
+<td>
+  <%= expense.amount %>
+</td>
+<td>
+<%= link_to("Edit", edit_expense_path(expense), :class => 'button-xs') %>
+</td>
+<td>
+<%= link_to("Delete", expense_path(expense), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs' ) %>
+</td>

@@ -3,7 +3,7 @@ class AssetsController < ApplicationController
   # after_action :verify_authorized
 
   def index
-	@assets = current_user.assets.all
+  	@assets = current_user.assets.all
   end
 
   def new
@@ -32,24 +32,12 @@ class AssetsController < ApplicationController
   end
 
   def update
-  	# @asset=params[:asset]
-    # authorize @user
-
-	# @user = User.find(params[:id])
-	@asset = Asset.find(params[:id])
+  	@asset = Asset.find(params[:id])
     if @asset.update_attributes(asset_params)
       redirect_to assets_path, :notice => "Changes saved."
     else
       redirect_to assets_path, :alert => "Unable to save changes."
     end
-
-  	# if @asset.save
-   #    flash[:success] = "Asset saved succesfully!"
-   #    redirect_to assets_path
-   #  else
-   #    flash[:error] = "Asset not saved succesfully!"
-   #    render 'assets/index'
-   #  end
   end
 
   private
