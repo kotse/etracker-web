@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503152839) do
+ActiveRecord::Schema.define(version: 20140510133239) do
 
   create_table "assets", force: true do |t|
     t.integer  "asset_type",  limit: 255
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20140503152839) do
 
   add_index "expenses", ["asset_id"], name: "index_expenses_on_asset_id"
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "user_id"
+    t.string   "integer"
+    t.string   "color"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["user_id"], name: "index_tags_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

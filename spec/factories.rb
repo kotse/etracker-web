@@ -23,4 +23,10 @@ FactoryGirl.define do
     asset
     user
   end
+
+  factory :tag do
+    name "Default"
+    color "00FF00"
+    user
+  end
 end

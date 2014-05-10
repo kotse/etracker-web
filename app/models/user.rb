@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :assets, dependent: :destroy
   has_many :expenses, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
