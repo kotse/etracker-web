@@ -1,0 +1,12 @@
+<td>
+  <%= tag.name %>
+</td>
+<td>
+  <%= tag.color %>
+</td>
+<td>
+<%= link_to("Edit", edit_tag_path(tag), :class => 'button-xs') %>
+</td>
+<td>
+<%= link_to("Delete", tag_path(tag), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs' ) %>
+</td>

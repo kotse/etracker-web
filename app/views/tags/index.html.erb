@@ -1,0 +1,29 @@
+<h1>Your assets:</h1>
+<br/>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<div class="row">
+	<div class="column">
+		<table class="table">
+		<tbody>
+		<tr>
+			<td>
+				Name
+			</td>
+			<td>
+				Color
+			</td>
+			<td colspan=2></td>
+		</tr>
+		<% @tags.each do |tag| %>
+		<tr>
+		  <%= render tag %>
+		</tr>
+		<% end %>
+		</tbody>
+		</table>
+
+		<%= link_to "Add new tag", new_tag_path, :class => 'button-xs' %><br />
+	</div>		
+</div>
