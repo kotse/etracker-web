@@ -11,6 +11,7 @@ describe Tag do
   it { should respond_to(:user_id) }
   it { should respond_to(:color) }
   it { should respond_to(:name) }
+  it { should respond_to(:expenses) }
 
   it { should be_valid }
 

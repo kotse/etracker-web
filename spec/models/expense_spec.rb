@@ -12,6 +12,7 @@ describe Expense do
   it { should respond_to(:asset_id) }
   it { should respond_to(:description) }
   it { should respond_to(:amount) }
+  it { should respond_to(:tags) }
 
   it { should be_valid }
 

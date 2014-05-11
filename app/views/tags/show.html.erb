@@ -1,5 +1,5 @@
-<h1>Your expenses:</h1>
-<br/>
+<h1><%= @tag.name %></h1>
+
 <div class="row">
 	<div class="column">
 
@@ -20,15 +20,13 @@
 			</td>
 			<td colspan=2></td>
 		</tr>
-		<% @expenses.each do |expense| %>
+		<% @tag.expenses.each do |expense| %>
 		<tr>
 		  <%= render expense %>
 		</tr>
 		<% end %>
 		</tbody>
 		</table>
-
-
-		<%= link_to "Add new expense", new_expense_path, :class => 'button-xs' %><br />	
 	</div>
 </div>
+
