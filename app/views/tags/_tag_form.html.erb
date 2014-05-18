@@ -10,7 +10,8 @@
   <div class='form-group'>
     <%= f.label :color %>
     
-    <%= f.text_field :color, placeholder: "00FF00", class: 'form-control' %>
+    <%= f.select :color, color_options %>
+    <!-- <%= f.text_field :color, placeholder: "00FF00", class: 'form-control' %> -->
   </div>
   
   <%= f.submit submit_text, class: "btn btn-large btn-primary" %>

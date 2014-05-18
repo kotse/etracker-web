@@ -29,4 +29,9 @@ FactoryGirl.define do
     color "00FF00"
     user
   end
+
+  factory :tag_color do
+    name "Default"
+    color_hex "00FF00"
+  end
 end

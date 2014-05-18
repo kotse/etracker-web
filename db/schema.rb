@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511141822) do
+ActiveRecord::Schema.define(version: 20140516120301) do
 
   create_table "assets", force: true do |t|
     t.integer  "asset_type",  limit: 255
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20140511141822) do
   create_table "expenses_tags", id: false, force: true do |t|
     t.integer "expense_id", null: false
     t.integer "tag_id",     null: false
+  end
+
+  create_table "tag_colors", force: true do |t|
+    t.string   "name"
+    t.string   "color_hex"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", force: true do |t|
