@@ -3,7 +3,7 @@ module TagsHelper
 	def color_options
 		options = []
 		TagColor.all.each do |tag_color|
-			options.push ["", tag_color.color_hex, {style: "background-color: #{tag_color.color_hex}"}]
+			options.push ["", tag_color.color_hex, {style: "background-color: #{tag_color.color_hex}; width: 100%"}]
 		end
 
 		options
