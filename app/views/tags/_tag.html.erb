@@ -1,8 +1,5 @@
 <td>
-  <%= tag.name %>
-</td>
-<td>
-  <%= tag.color %>
+  <%= content_tag(:span, tag.name, class: "label label-primary label-primary-tag", style: "background-color: #{tag.color}")  %>
 </td>
 <td>
 <%= link_to("Edit", edit_tag_path(tag), :class => 'button-xs') %>

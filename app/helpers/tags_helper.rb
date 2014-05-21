@@ -1,10 +1,9 @@
 module TagsHelper
 
 	def color_options
-# , {class: "someclass"}
 		options = []
-		12.times do |index|
-			options.push ["", "ff00ff", {class: "palette-#{index+1}"}]
+		TagColor.all.each do |tag_color|
+			options.push ["", tag_color.color_hex, {style: "background-color: #{tag_color.color_hex}"}]
 		end
 
 		options

@@ -3,7 +3,7 @@
 </td>
 <td>
   <% expense.tags.each do |tag| %>
-  	<%= link_to(tag.name, tag_path(tag), class: 'button-xs', style: "background-color: ##{tag.color}") %>
+  	<%= link_to(tag.name, tag_path(tag), class: 'button-xs', style: "background-color: #{tag.color}") %>
   <% end %>
 </td>
 <td>
