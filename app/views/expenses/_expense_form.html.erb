@@ -5,7 +5,15 @@
   <div class='form-group'>
     <%= f.label "Asset" %>
     
-    <%= f.select(:asset_id, current_user.assets.map {|asset| [asset.description,asset.id]})%>
+    <div class="btn-group" data-toggle="buttons">
+        <% current_user.assets.each do |asset| %>
+          <% set_selected = "active" if asset.id == @expense.asset.id %>
+          <label class="btn btn-primary <%= set_selected %>">
+            <input type="radio" name="expense[asset_id]" id="expense_asset_<%= asset.id %>" value="<%= asset.id %>"><%= asset.description %>
+          </label>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class='form-group'>
     <%= f.label :description %>

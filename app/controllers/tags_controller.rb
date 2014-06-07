@@ -7,6 +7,7 @@ class TagsController < ApplicationController
 
   def new
   	@tag  = current_user.tags.build
+    @tag.color = TagColor.all.first.color_hex
   end
 
   def create
