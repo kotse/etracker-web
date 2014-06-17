@@ -20,6 +20,10 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'pry-rails'
+  gem 'pry'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
