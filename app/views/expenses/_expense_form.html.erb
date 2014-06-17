@@ -7,7 +7,7 @@
     
     <div class="btn-group" data-toggle="buttons">
         <% current_user.assets.each do |asset| %>
-          <% set_selected = "active" if asset.id == @expense.asset.id %>
+          <% set_selected = "active" if @expense.asset.nil? == false and asset.id == @expense.asset.id %>
           <label class="btn btn-primary <%= set_selected %>">
             <input type="radio" name="expense[asset_id]" id="expense_asset_<%= asset.id %>" value="<%= asset.id %>"><%= asset.description %>
           </label>
