@@ -10,9 +10,16 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
 //= require jquery.simplecolorpicker
 //= require_tree .
+
+window.onLoad = function(callback) {
+  // binds ready event and turbolink page:load event
+  $(document).ready(callback);
+  $(document).on('page:load',callback);
+};
