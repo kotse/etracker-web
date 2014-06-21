@@ -16,6 +16,10 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery.simplecolorpicker
+//= require d3
+//= require d3.chart
+//= require pie
+//= require legend
 //= require_tree .
 
 window.onLoad = function(callback) {

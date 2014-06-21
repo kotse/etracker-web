@@ -6,4 +6,14 @@ class Expense < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :asset_id, presence: true
 	validates :amount, presence: true
+
+	def tag_names
+		tag_names = []
+
+		tags.each do |tag|
+			tag_names.push tag.name
+		end
+
+		tag_names
+	end
 end
