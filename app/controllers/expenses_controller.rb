@@ -16,7 +16,7 @@ class ExpensesController < ApplicationController
       redirect_to expenses_path
     else
       flash[:error] = "Expense not tracked succesfully!"
-      render 'expenses/index'
+      redirect_to expenses_path
     end
   end
 
@@ -32,7 +32,6 @@ class ExpensesController < ApplicationController
 
   def update
   	@expense = Expense.find(params[:id])
-    # binding.pry
     if @expense.update_attributes(expense_params)
       redirect_to expenses_path, :notice => "Changes saved."
     else
@@ -43,6 +42,6 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:asset_id, :description, :amount, {:tag_ids => []})
+    params.require(:expense).permit(:asset_id, :happened_at, :description, :amount, {:tag_ids => []})
   end
 end

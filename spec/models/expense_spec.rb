@@ -13,6 +13,7 @@ describe Expense do
   it { should respond_to(:description) }
   it { should respond_to(:amount) }
   it { should respond_to(:tags) }
+  it { should respond_to(:happened_at) }
 
   it { should be_valid }
 
@@ -30,6 +31,12 @@ describe Expense do
 
   describe "when amount is not present" do
     before { @expense.amount = nil }
+    
+    it { should_not be_valid }
+  end
+
+  describe "when happened_at is not present" do
+    before { @expense.happened_at = nil }
     
     it { should_not be_valid }
   end

@@ -26,7 +26,7 @@ class Report
 
 	  @expenses.each do |expense|
 	  	amount_sum = 0
-	  	date_tag = expense.created_at.strftime("%d/%m/%Y")
+	  	date_tag = expense.happened_at.strftime("%d/%m/%Y")
 	  	amount_sum = @data[date_tag] unless @data[date_tag].nil?
 	  	@data[date_tag] = amount_sum + expense.amount
 	  end

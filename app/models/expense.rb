@@ -6,6 +6,7 @@ class Expense < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :asset_id, presence: true
 	validates :amount, presence: true
+	validates :happened_at, presence: true
 
 	def tag_names
 		tag_names = []

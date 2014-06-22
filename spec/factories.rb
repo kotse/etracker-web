@@ -20,6 +20,7 @@ FactoryGirl.define do
   factory :expense do
     description "Default"
     amount 100
+    happened_at Date.new(2014, 1, 1)
     asset
     user
   end

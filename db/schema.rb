@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516120301) do
+ActiveRecord::Schema.define(version: 20140622131631) do
 
   create_table "assets", force: true do |t|
     t.integer  "asset_type",  limit: 255
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140516120301) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "asset_id"
+    t.datetime "happened_at"
   end
 
   add_index "expenses", ["asset_id"], name: "index_expenses_on_asset_id"
