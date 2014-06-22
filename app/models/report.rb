@@ -19,4 +19,18 @@ class Report
 
 	  @data.map { |k,v| {label:k,  value: v}}
 	end
+
+	def expenses_over_time
+	  @data = Hash.new
+	  @expenses = @user.expenses.all
+
+	  @expenses.each do |expense|
+	  	amount_sum = 0
+	  	date_tag = expense.created_at.strftime("%d/%m/%Y")
+	  	amount_sum = @data[date_tag] unless @data[date_tag].nil?
+	  	@data[date_tag] = amount_sum + expense.amount
+	  end
+
+      @data.map { |k,v| {name:k,  value: v}}
+	end
 end

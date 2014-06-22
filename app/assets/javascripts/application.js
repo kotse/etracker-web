@@ -18,8 +18,9 @@
 //= require jquery.simplecolorpicker
 //= require d3
 //= require d3.chart
-//= require pie
-//= require legend
+//= require d3.chart.barchart
+//= require d3.chart.pie
+//= require d3.chart.legend
 //= require_tree .
 
 window.onLoad = function(callback) {

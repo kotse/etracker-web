@@ -1,3 +1,15 @@
 <h1>Reports</h1>
 
-<div id="chart_report"></div>
+<div style="float: left; padding-top: 15px">
+<!-- TODO: generate html for each report type, remember them in the backend -->
+	<div>
+		<%= radio_button_tag(:report, "by_tag", true, class: "select_report") %>
+		<%= label_tag('report_by_tag', "Expenses by tag") %>
+	</div>
+	<div>
+		<%= radio_button_tag(:report, "over_time", false, class: "select_report") %>
+		<%= label_tag('report_over_time', "Expenses over time") %>
+	</div>
+	<%= button_tag "Generate report", class: "btn btn-primary", id: "btn-gen-report" %> 
+</div>
+<div id="chart_report" style="float: left; padding-left: 20px"></div>
